@@ -1,4 +1,4 @@
-require_relative "../test/test_helper"
+require_relative "spec_helper"
 require_relative "../lib/magic_ball"
 
 describe "MagicBall" do
