@@ -17,9 +17,14 @@ class MagicBallTest < Minitest::Test
   end
 
   def test_raises_error_when_question_is_number
+    magic_ball = MagicBall.new
+
     assert_raises "Question has invalid format." do
-      magic_ball = MagicBall.new
       magic_ball.ask(1)
+    end
+
+    assert_raises "Question has invalid format." do
+      magic_ball.ask("This is a statement")
     end
   end
 end

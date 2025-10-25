@@ -25,10 +25,16 @@ class MagicBall
   INVALID_FORMAT_ERROR = "Question has invalid format.".freeze
 
   def ask(question)
-    if question.is_a?(String) && question[-1] == "?"
+    if is_valid_question?(question)
       ANSWERS.sample
     else
       raise INVALID_FORMAT_ERROR
     end
+  end
+
+  private
+
+  def is_valid_question?(question)
+    question.is_a?(String) && question[-1] == "?"
   end
 end
