@@ -7,4 +7,8 @@ class MagicBallTest < Minitest::Test
 
     assert magic_ball.ask("Whatever") != nil
   end
+
+  def test_predefined_answers_is_array
+    assert_kind_of Array, MagicBall::ANSWERS
+  end
 end
